@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import Firebase from './firebase'
 
@@ -7,7 +7,7 @@ const Loading = ({navigation}) => {
 
   function listener(user) {
     if (!user) {
-      navigation.navigate('Login')
+      navigation.navigate('SignUp')
     } else {
       navigation.navigate('Home')
     }
@@ -23,6 +23,9 @@ const Loading = ({navigation}) => {
   )
 }
 
+export default Loading;
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -30,4 +33,3 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
-export default Loading;

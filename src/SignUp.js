@@ -25,11 +25,11 @@ const SignUp = ({navigation}) => {
         />
         <Button title="Sign Up" 
                 onPress={() => {
-                    try {
-                      Firebase.auth().createUserWithEmailAndPassword(email, password);
-                    } catch (err) {
-                      console.log(err);
-                    }
+                  Firebase
+                  .auth()
+                  .createUserWithEmailAndPassword(email, password)
+                  .then(() => navigation.navigate('Home'))
+                  .catch(error => console.log(error))
                   }} />
         <Button
           title="Already have an account? Login"

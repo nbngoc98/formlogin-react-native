@@ -25,11 +25,11 @@ const Login = ({navigation}) => {
         />
         <Button title="Login" 
                 onPress={() => {
-                  try {
-                    Firebase.auth().signInWithEmailAndPassword(email, password);
-                  } catch (err) {
-                    console.log(err);
-                  }
+                  Firebase
+                  .auth()
+                  .signInWithEmailAndPassword(email, password)
+                  .then(() => navigation.navigate('Home'))
+                  .catch(error => console.log(error))
                 }}
          />
         <Button
